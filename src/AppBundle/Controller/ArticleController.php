@@ -39,9 +39,10 @@ class  ArticleController extends  AbstractController
     public  function postArticlesAction(Article $article)
     {
        $em = $this->getDoctrine()->getManager();
+       //On persiste en BDD
        $em->persist($article);
        $em->flush();
-
+       //On retourne la ressource créée
        return $article;
 
     }
@@ -55,7 +56,7 @@ class  ArticleController extends  AbstractController
     {
 
         if(null == $article)
-        {
+        {   //On ne trouve pas l'article à supprimer
             return $this->view(null,404);
         }
 
@@ -64,6 +65,24 @@ class  ArticleController extends  AbstractController
         $em->flush();
     }
 
+    /**
+     * @Rest\View()
+     * @param $slug
+     */
+    public function getArticleAction($slug)
+    {
+       // On passe un slug (qui doit etre unique)
+        $criteria = array('slug' => $slug);
+
+        $article = $this->getDoctrine()->getRepository('AppBundle:Article')->findOneBy($criteria);
+
+        if(null == $article)
+        {   //On ne trouve pas l'article à afficher
+            return $this->view(null,404);
+        }
+
+        return $article;
+    }
 
 
 
