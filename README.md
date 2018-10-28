@@ -9,9 +9,14 @@ $ git clone https://github.com/Kameldev/rest-api.git
 ``` bash
 lancer le  script ocsi.sql (après avoir crée  la bdd : ocsi)
 ```
-### 2. Install dependencies
+### 3. Install dependencies
 ``` bash
 $ composer install
+```
+
+### 4. Run Server (run api server first) 
+``` bash
+$ php bin/console server:run  
 ```
 **WARNING**: This distribution does not support Symfony 4. See the
 [Installing & Setting up the Symfony Framework][15] page to find a replacement
