@@ -29,7 +29,22 @@ class  ArticleController extends  AbstractController
 
     }
 
+    /**
+     * @Rest\View(statusCode=201)
+     * @ParamConverter("article",converter="fos_rest.request_body")
+     * @Rest\NoRoute()
+     * @param Article $article
+     */
 
+    public  function postArticlesAction(Article $article)
+    {
+       $em = $this->getDoctrine()->getManager();
+       $em->persist($article);
+       $em->flush();
+
+       return $article;
+
+    }
 
 
 
