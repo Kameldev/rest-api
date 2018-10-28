@@ -1,6 +1,18 @@
 Symfony Standard Edition
 ========================
-
+## Installation
+### 1. Clone repository
+``` bash
+$ git clone https://github.com/Kameldev/rest-api.git
+```
+### 2. Install database
+``` bash
+run script ocsi.sql
+```
+### 2. Install dependencies
+``` bash
+$ composer install
+```
 **WARNING**: This distribution does not support Symfony 4. See the
 [Installing & Setting up the Symfony Framework][15] page to find a replacement
 that fits you best.
