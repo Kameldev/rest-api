@@ -20,7 +20,7 @@ class  ArticleController extends  AbstractController
     /**
      * @Rest\View()
      */
-    public  function  getArticleAction()
+    public  function  getArticlesAction()
     {
 
         $articles = $this->getDoctrine()->getRepository('AppBundle:Article')->findAll();
@@ -46,6 +46,23 @@ class  ArticleController extends  AbstractController
 
     }
 
+    /**
+     * @Rest\View()
+     * @param Article|null $article
+     * @return \FOS\RestBundle\View\View
+     */
+    public function deleteArticleAction(Article $article=null)
+    {
+
+        if(null == $article)
+        {
+            return $this->view(null,404);
+        }
+
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($article);
+        $em->flush();
+    }
 
 
 
