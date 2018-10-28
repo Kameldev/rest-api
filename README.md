@@ -1,4 +1,4 @@
-Symfony Standard Edition
+ARTICLE REST API
 ========================
 ## Installation
 ### 1. Clone repository
@@ -7,7 +7,7 @@ $ git clone https://github.com/Kameldev/rest-api.git
 ```
 ### 2. Install database
 ``` bash
-run script ocsi.sql
+lancer le  script ocsi.sql (après avoir crée  la bdd : ocsi)
 ```
 ### 2. Install dependencies
 ``` bash
