@@ -14,6 +14,20 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class  ArticleController extends  AbstractController
 {
 
+    use ControllerTrait;
+
+
+    /**
+     * @Rest\View()
+     */
+    public  function  getArticleAction()
+    {
+
+        $articles = $this->getDoctrine()->getRepository('AppBundle:Article')->findAll();
+
+        return $articles;
+
+    }
 
 
 
