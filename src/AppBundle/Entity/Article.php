@@ -59,7 +59,7 @@ class Article
     /**
      * @var string
      *
-     * @ORM\Column(name="createdBy", type="string", length=500)
+     * @ORM\Column(name="created_by", type="string", length=500)
      */
     private $createdBy;
 
