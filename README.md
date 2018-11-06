@@ -7,7 +7,7 @@ $ git clone https://github.com/Kameldev/rest-api.git
 ```
 ### 2. Install database
 ``` bash
-lancer le  script ocsi.sql (après avoir crée  la bdd : ocsi)
+lancer le  script bdd.sql (après avoir crée  la bdd : bdd)
 ```
 ### 3. Install dependencies
 ``` bash
